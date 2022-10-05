@@ -387,7 +387,78 @@ img {
 }
 
 /*==================== SKILLS ====================*/
+.skills__container {
+  row-gap: 0;
+}
 
+.skills__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-0-75);
+  cursor: pointer;
+}
+
+.skills__icon, 
+.skills__arrow {
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.skills__icon {
+  margin-right: var(--mb-0-75);
+}
+
+.skills__title {
+  font-size: var(--h3-font-size);
+}
+
+.skills__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.skills__arrow {
+  margin-left: auto;
+  transition: 0.4s;
+}
+
+.skills__titles {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.skills__mark {
+  color: var(--first-color);
+  margin-right: 0.5rem;
+  font-size: 2rem;
+}
+
+.skills__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+}
+
+.skills__list {
+  row-gap: .5rem;
+  padding-left: 2.7rem;
+  margin-bottom: var(--mb-2);
+}
+
+.skills__closed .skills__list {
+  height: 0;
+  overflow: hidden;
+}
+
+.skills__open .skills__list {
+  height: max-content;
+  margin-bottom: var(--mb-2-5);
+  margin-top: 2rem;
+}
+
+.skills__open .skills__arrow {
+  transform: rotate(-180deg);
+}
 
 /*==================== QUALIFICATION ====================*/
 
