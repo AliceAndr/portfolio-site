@@ -47,14 +47,45 @@ skillsHeader.forEach((el) => {
   el.addEventListener('click', toggleSkills);
 });
 
-/*==================== QUALIFICATION TABS ====================*/
-
-
 /*==================== SERVICES MODAL ====================*/
+const modalViews = document.querySelectorAll('.services__modal');
+const modalBtns = document.querySelectorAll('.services__button');
+const modalCloseBtns = document.querySelectorAll('.services__modal-close');
+const body = document.querySelector('body');
 
+let modal = function(modalClick) {
+  modalViews[modalClick].classList.add('active-modal');
+  body.classList.add('body__modal-open');
+}
+
+modalBtns.forEach((el, i) => {
+  el.addEventListener('click', () => {
+    modal(i);
+  })
+});
+
+modalCloseBtns.forEach((el) => {
+  el.addEventListener('click', () => {
+    modalViews.forEach((modal) => {
+      modal.classList.remove('active-modal');
+      body.classList.remove('body__modal-open');
+    });
+  })
+});
 
 /*==================== PORTFOLIO SWIPER  ====================*/
-
+let swiper = new Swiper('.portfolio__container', {
+  cssMode: true,
+  loop: true,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  }
+});
 
 /*==================== TESTIMONIAL ====================*/
 
@@ -69,3 +100,11 @@ skillsHeader.forEach((el) => {
 
 
 /*==================== DARK LIGHT THEME ====================*/
+
+
+
+// $.each( $('*'), function() { 
+//   if( $(this).width() > $('body').width()) {
+//       console.log("Wide Element: ", $(this), "Width: ", $(this).width()); 
+//   } 
+// });
